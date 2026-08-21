@@ -1,0 +1,98 @@
+https://api.neoxr.eu/api/play?q=multo&apikey=daniel001 
+{
+  "creator": "@neoxr.js – Wildan Izzudin",
+  "status": true,
+  "id": "Rht8rS4cR1s",
+  "title": "Multo - Cup of Joe (Official Lyric Video)",
+  "thumbnail": "https://i.ytimg.com/vi/Rht8rS4cR1s/hqdefault.jpg",
+  "duration": "04:00",
+  "duration_seconds": 240,
+  "channel": "Cup of Joe",
+  "views": "227.119.653",
+  "data": {
+    "filename": "Multo - Cup of Joe (Official Lyric Video).mp3",
+    "quality": "128kbps",
+    "size": "3.7 MB",
+    "extension": "mp3",
+    "url": "https://secure-signed.pages.dev/token/y6GcyqkExK1KLSr5DB4w?domain=neoxr.eu"
+  }
+}
+import axios from 'axios'
+
+const getApiData = async () => {
+  try {
+    const response = await axios.get('https://api.neoxr.eu/api/play?q=multo&apikey=daniel001')
+    console.log(response.data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+getApiData()
+
+
+
+https://api.neoxr.eu/api/tiktok?url=https%3A%2F%2Fwww.tiktok.com%2F%40nikenandalusia%2Fvideo%2F7480894024082050309%3Fis_from_webapp%3D1%26sender_device%3Dpc%26web_id%3D7482388089839765012&apikey=daniel001
+{
+  "creator": "@neoxr.js – Wildan Izzudin",
+  "status": true,
+  "data": {
+    "id": "7480894024082050309",
+    "caption": "lagi cos test mai 😗  #maishiranui #cosplay",
+    "author": {
+      "id": "6820340003454649346",
+      "shortId": "",
+      "uniqueId": "nikenandalusi_",
+      "nickname": "Niken ♡",
+      "avatarLarger": "https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/073009b756b9a3c65512c9486344ca92~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=8e42619e&x-expires=1787504400&x-signature=z63mlgAWSVc5nyLkTMZzJzs3yLw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2",
+      "avatarMedium": "https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/073009b756b9a3c65512c9486344ca92~tplv-tiktokx-cropcenter:720:720.jpeg?dr=14579&refresh_token=4e4ca795&x-expires=1787504400&x-signature=75HezqJLCx6%2F8Fd0k3Pwxijaeec%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2",
+      "avatarThumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/073009b756b9a3c65512c9486344ca92~tplv-tiktokx-cropcenter:100:100.jpeg?dr=14579&refresh_token=5065a18c&x-expires=1787504400&x-signature=PHr18iqB84udFibbUQ0M52VbiDg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2",
+      "signature": "real acc cuma ini @niken_andalusia \n💌 business inq +6287873015290\n💋 instagram @nikenandalusi",
+      "createTime": 1587984420,
+      "verified": false,
+      "secUid": "MS4wLjABAAAATd2eBcGzoJplVlz5CeqsDZLhip7-pohXsKXuDl9jjYhCNeeIDjt6u0yMFl0GwE6A",
+      "ftc": false,
+      "relation": 0,
+      "openFavorite": false,
+      "commentSetting": 0,
+      "duetSetting": 1,
+      "stitchSetting": 1,
+      "privateAccount": false,
+      "secret": false,
+      "isADVirtual": false,
+      "roomId": "",
+      "uniqueIdModifyTime": 0,
+      "ttSeller": false,
+      "downloadSetting": 3,
+      "recommendReason": "",
+      "nowInvitationCardUrl": "",
+      "nickNameModifyTime": 0,
+      "isEmbedBanned": false,
+      "canExpPlaylist": false,
+      "suggestAccountBind": false,
+      "UserStoryStatus": 0,
+      "shortDramaCreator": {}
+    },
+    "statistic": {
+      "likes": 28500,
+      "comments": 143,
+      "shares": 608400,
+      "views": 608400,
+      "saved": "11576"
+    },
+    "music": {
+      "id": "7480894019749382967",
+      "cover": "https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/073009b756b9a3c65512c9486344ca92~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=8e42619e&x-expires=1787504400&x-signature=z63mlgAWSVc5nyLkTMZzJzs3yLw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2",
+      "title": "original sound - Niken ♡",
+      "author": "Niken ♡",
+      "duration": 21,
+      "original": true,
+      "copyright": true
+    },
+    "published": "1741781376",
+    "photo": false,
+    "audio": "https://dl.snapcdn.app/get?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3YxNi1pZXMtbXVzaWMudGlrdG9rY2RuLXVzLmNvbS9jM2YyYmUxMTBkZDcwNmJjOWMzMTFjZDJlZjEyM2RkOS82YTkxYzI2My92aWRlby90b3MvdXNlYXN0NS90b3MtdXNlYXN0NS12ZS0yN2RjZDdjNzk5LXR4L29zekZNOFVZZ0kwd1JuM0N2ZVBvaUdZQ293bXFTRXJlZ0VUTGVULz9hPTU4Mzk2NSZidGk9T1VCek9UZzdRR282T2paQUwzQWpMVEF6WUNNeE5ETmcmJmJ0PTEyNSZmdD03Z35hdEREd05qNlZRUWRHbnRwaXNkfkVJWFpxWWxLNkVfNH5oV0xySyZtaW1lX3R5cGU9YXVkaW9fbXBlZyZyYz1aem96TldSbFoyZzdOMlU0T2p4bWFVQnBNMmRxYUhrNWNqTnhlVE16TnpVOE0wQXlNVE0yTlROZlhqUXhYeTVlTVRRd1lTTXdMMmt2TW1Sclp6VmdMUzFrTVRaemN3JTNEJTNEJnZ2cGw9MSZsPTIwMjYwODIxMTcxNTM2OUY5M0U2ODgxRjg1NDIyNEEyQTEmYnRhZz1lMDAwYjgwMDAmc2hwPWQwNWIxNGJkJnNoY3A9LSIsImZpbGVuYW1lIjoiVGlrVmlkZW8uQXBwXzc0ODA4OTQwMjQwODIwNTAzMDkubXAzIiwibmJmIjoxNzg3MzMyNTM4LCJleHAiOjE3ODczMzYxMzgsImlhdCI6MTc4NzMzMjUzOH0.SMSbASIdn9lDsyeADBwcOm_Igj-eEIBKgG5kOQNliJ8",
+    "video": "https://dl.snapcdn.app/get?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3YxNm0udGlrdG9rY2RuLXVzLmNvbS82NGYzOWYyODZjOTA5MmIzNmNkYTRiYTFlYjQwNGRlYS82YTg4ZGMyZS92aWRlby90b3MvYWxpc2cvdG9zLWFsaXNnLXZlLTAwNjhjODAwLXNnL29JRUZWNVFRSjRBRlVFWGVHalJ0MTBmZ1NsRDZCQkVJUmdZbjhpLz9hPTEyMzMmYnRpPU9VQnpPVGc3UUdvNk9qWkFMM0FqTFRBellDTXhORE5nJiZidD04MjImZnQ9NzR-V0hERHdOajZWUVFkR250cGlzZH5FSVhacVlsSzZFXzR-aFdMcksmbWltZV90eXBlPXZpZGVvX21wNCZyYz1PamRvWlRvMU5tVmxQRGc3WmpzOGFVQnBNM0JrTjNRNWNuaHhlVE16Tnpjek0wQXRMbUV1TGw0dFh6VXhMeTgxTFRRdllTTnBaUzF6TW1SalpqVmdMUzFrTVRaemN3JTNEJTNEJnZ2cGw9MSZsPTIwMjYwODIxMTcxNTM2OUY5M0U2ODgxRjg1NDIyNEEyQTEmYnRhZz1lMDAwYjgwMDAiLCJmaWxlbmFtZSI6IlRpa1ZpZGVvLkFwcF83NDgwODk0MDI0MDgyMDUwMzA5Lm1wNCIsIm5iZiI6MTc4NzMzMjUzOCwiZXhwIjoxNzg3MzM2MTM4LCJpYXQiOjE3ODczMzI1Mzh9.HBqRrOSR1smQMMvPFbp2Vn7h1tZHDRvXPIRP4VsUqWc",
+    "videoWM": "https://v16m.tiktokcdn-us.com/64f39f286c9092b36cda4ba1eb404dea/6a88dc2e/video/tos/alisg/tos-alisg-ve-0068c800-sg/oIEFV5QQJ4AFUEXeGjRt10fgSlD6BBEIRgYn8i/?a=1233&bti=OUBzOTg7QGo6OjZAL3AjLTAzYCMxNDNg&&bt=822&ft=74~WHDDwNj6VQQdGntpisd~EIXZqYlK6E_4~hWLrK&mime_type=video_mp4&rc=OjdoZTo1NmVlPDg7Zjs8aUBpM3BkN3Q5cnhxeTMzNzczM0AtLmEuLl4tXzUxLy81LTQvYSNpZS1zMmRjZjVgLS1kMTZzcw%3D%3D&vvpl=1&l=202608211715369F93E6881F854224A2A1&btag=e000b8000"
+  }
+}

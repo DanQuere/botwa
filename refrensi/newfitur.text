@@ -1,0 +1,86 @@
+RIMURU-MD v4 — FITUR TAMBAHAN OURIN
+===================================
+
+FITUR BARU YANG DITAMBAHKAN:
+- amprem2.js — varian AMPREM kedua yang mengikuti struktur plugin Rimuru MD.
+  Credit/branding: Anita
+  Saluran: https://whatsapp.com/channel/0029Vb8dmsUElagkVPIw9X2P
+  Perintah: .amprem2
+
+CATATAN AMPRem2:
+- Rimuru MD sudah memiliki amprem.js, sehingga amprem2.js dibuat sebagai nama terpisah agar tidak menimpa plugin lama.
+- Implementasi amprem2 mengikuti mekanisme API amprem yang sudah digunakan Rimuru MD, bukan menambahkan implementasi Ourin yang bergantung pada struktur internal Ourin.
+- Session tetap sementara dan token hanya dipakai untuk request proses; tidak disimpan ke database.
+
+PEMERIKSAAN BENTROK:
+- pushkontak: sudah ada di Rimuru MD, tidak diduplikasi.
+- fakeovo: sudah ada di Rimuru MD, tidak diduplikasi.
+- Fitur lain yang fungsi intinya sudah sama tidak dibuat ulang hanya karena nama command berbeda.
+
+PEMERIKSAAN:
+- amprem2.js syntax check: OK
+BUG FIX — PUSHKONTAK
+- Menghapus plugin legacy plugins/owner/pushkontak.js yang bentrok dengan plugin pushkontak modern.
+- Memperbaiki fallback metadata grup agar mengambil sock.groupMetadata(m.chat) jika m.groupMetadata tidak tersedia.
+- Menambahkan validasi metadata/participants agar tidak lagi TypeError "Cannot read properties of undefined (reading participants)".
+- Fitur pushkontak modern tetap digunakan, termasuk mode, sesi, jeda, auto VCF, kode unik, skip admin, dan target VCF.
+
+AUDIT KOMPATIBILITAS & PERBAIKAN BUG LANJUTAN
+=============================================
+
+BUG DITEMUKAN DAN DIPERBAIKI:
+1. cekml.js
+   - Sebelumnya langsung memanggil response.json().
+   - Jika API mengembalikan HTML/error page, muncul:
+     SyntaxError: Unexpected token '<', "<!DOCTYPE ..." is not valid JSON
+   - Sekarang memeriksa HTTP status dan memakai parser JSON aman.
+   - Jika respons bukan JSON, bot membalas error yang ramah tanpa crash.
+
+2. pushkontak.js
+   - Sudah diperbaiki pada build sebelumnya.
+   - Fallback metadata grup menggunakan sock.groupMetadata(m.chat).
+   - Validasi participants ditambahkan agar tidak muncul undefined.participants.
+   - Plugin owner/pushkontak legacy yang bentrok sudah dihapus.
+
+3. Proteksi API JSON
+   - Ditambahkan src/lib/rimuru-safe-json.js.
+   - Plugin yang sebelumnya melakukan response.json() tanpa perlindungan pada respons eksternal diperkuat.
+   - Termasuk plugin anime/random/AI/tools/download/stalker yang terdeteksi memiliki jalur JSON tanpa try/catch.
+   - Respons HTML, kosong, atau JSON rusak sekarang tidak langsung menyebabkan SyntaxError.
+
+4. stalkml.js
+   - Parser JSON eksternal diperkuat dengan safeJson.
+   - Plugin legacy ml.js yang memakai command mlstalk dan bertabrakan dengan stalkml.js dihapus.
+   - Command mlstalk sekarang hanya mempunyai satu implementasi utama.
+
+5. wastalk
+   - Ditemukan dua implementasi dengan command wastalk: legacy wa.js dan modern wastalk.js.
+   - wa.js yang duplikat identik dihapus.
+   - Implementasi modern wastalk.js dipertahankan.
+
+6. taxy/grab
+   - Ditemukan alias taxy pada grab.js dan plugin taxy.js.
+   - Alias taxy dari grab.js dihapus agar tidak terjadi perebutan handler.
+   - grab, taksi, dan megrab tetap tersedia di grab.js.
+   - taxy tetap ditangani taxy.js.
+
+7. dungeon
+   - Ditemukan command dungeon pada dungeon.js dan rpg.js.
+   - Alias dungeon dari rpg.js dihapus; alias dg tetap ada di rpg.js.
+   - Implementasi dungeon.js tetap menjadi handler utama command dungeon.
+
+8. cekml/mlstalk
+   - cekml.js sekarang hanya menangani mlbb dan cekml.
+   - mlstalk dibiarkan pada stalkml.js agar tidak bentrok.
+
+AUDIT HASIL:
+- Plugin pushkontak: diperbaiki.
+- Plugin cekml: diperbaiki.
+- Jalur response.json() yang berada di luar try/catch pada plugin terdeteksi: diperkuat dengan safeJson.
+- Direct response.json() tanpa try/catch pada plugin: 0 tersisa berdasarkan audit statis.
+- File JS yang diubah dalam audit lanjutan: syntax check OK.
+- safeJson diuji dengan respons JSON valid dan HTML: OK.
+- Tidak menghapus fitur utama; perubahan command dilakukan hanya pada alias yang terbukti bentrok.
+
+CATATAN:
+Audit ini adalah audit statis/kompatibilitas source. API pihak ketiga tetap bisa mati/rate-limit sewaktu-waktu, tetapi plugin yang diperkuat tidak lagi membiarkan respons HTML/JSON rusak menjadi crash JSON mentah.

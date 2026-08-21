@@ -1,0 +1,295 @@
+{
+  "26809672417297@s.whatsapp.net": {
+    "userJid": "26809672417297@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "model": "gemini-3.7-flash-high",
+    "systemInstruction": "You are Antigravity, an ultra-advanced AI coding & multimodal reasoning agent developed by Google DeepMind. Respond accurately, concisely, intelligently, and format responses with clean Markdown.",
+    "history": [],
+    "usage": {
+      "promptTokens": 1,
+      "candidatesTokens": 42,
+      "totalTokens": 42,
+      "totalRequests": 1,
+      "lastRequestTime": 1787308771482
+    },
+    "createdAt": 1787076674190,
+    "lastActive": 1787308771482,
+    "effort": "medium"
+  },
+  "6283896757956@s.whatsapp.net": {
+    "userJid": "6283896757956@s.whatsapp.net",
+    "isLoggedIn": true,
+    "token": "ya29.a0AdMD6Eh8RougK7xQmeEeoMcgKRLTCtrX4c2y2E-ECxz3pIY0KsG_XMWl1OHhT1GwD3gHmZactqz12ZYvGLvwyzfalbNrJzf8DnT5kEMmLlfBG8rDplHPJorhPfDv_Ii-RpU00ZtBZCsXIZmYSbnCzaCEsQ-NvB9-svMvwqMy6lvQ2A4rSeMQgMbGXkzJf_xyz5ucSZZ3H2yWaCgYKAaoSARASFQHGX2MiGEM44e8MAdYNcW8n0SyUrQ0211",
+    "refreshToken": "",
+    "codeVerifier": "",
+    "model": "gemini-3.7-flash-high",
+    "systemInstruction": "",
+    "history": [
+      {
+        "role": "user",
+        "text": "Hai sayangku"
+      },
+      {
+        "role": "model",
+        "text": "Halo! 👋 Ada yang bisa saya bantu hari ini?\n\nSebagai asisten virtual, saya siap membantu berbagai kebutuhan kamu, seperti:\n\n* 💡 *Informasi & Pengetahuan Umum*\n* ✍️ *Menulis, merangkum, atau mengedit pesan/teks*\n* 🔍 *Diskusi & curah pendapat (brainstorming)*\n* 🛠️ *Solusi praktis untuk pertanyaan atau masalah sehari-hari*\n\nSilakan beri tahu apa yang kamu butuhkan, ya! ✨"
+      },
+      {
+        "role": "user",
+        "text": "Hai"
+      },
+      {
+        "role": "model",
+        "text": "Hello! How can I help you today?"
+      },
+      {
+        "role": "user",
+        "text": "Bisa cek struktur project bot ini"
+      },
+      {
+        "role": "model",
+        "text": "jetski: no output produced — a tool required the \"read_file\" permission that headless mode cannot prompt for, so it was auto-denied. Add an allow-rule under permissions.allow in settings.json (e.g. read_file(<target>)). Alternatively, re-run with --dangerously-skip-permissions to auto-approve all tools."
+      },
+      {
+        "role": "user",
+        "text": "Bisa cek struktur project bot ini dan rangkum dalam 3 poin singkat"
+      },
+      {
+        "role": "model",
+        "text": "Berikut adalah ringkasan struktur project bot WhatsApp ini dalam 3 poin singkat:\n\n1. **Engine & Konfigurasi Utama (ESM)**\n   * Dibangun menggunakan Node.js (ES Modules) berbasis library [`@whiskeysockets/baileys`](file:///home/runner/workspace/package.json).\n   * Titik masuk aplikasi dan lifecycle diatur di [index.js](file:///home/runner/workspace/index.js), sedangkan pengaturan bot, owner, dan pesan sistem berada di [settings.js](file:///home/runner/workspace/settings.js).\n\n2. **Arsitektur Plugin & Core Library**\n   * **Sistem Perintah Modular**: Menggunakan plugin loader dinamis di folder [plugins/](file:///home/runner/workspace/plugins) yang terorganisir per kategori (`ai`, `downloader`, `group`, `main`, `owner`, `sticker`, `tools`, `antigravity`).\n   * **Core & Helper**: Penanganan koneksi, serialisasi pesan, dan event handler diatur dalam [lib/connection.js](file:///home/runner/workspace/lib/connection.js), [lib/handler.js](file:///home/runner/workspace/lib/handler.js), serta [lib/serialize.js](file:///home/runner/workspace/lib/serialize.js) dengan berbagai fungsi pembantu di [utils/](file:///home/runner/workspace/utils).\n\n3. **Penyimpanan Data & Manajemen Sesi**\n   * **Database JSON**: Mengelola data pengguna, grup, dan konfigurasi secara lokal via [database/index.js](file:///home/runner/workspace/database/index.js) dan [database/db.json](file:///home/runner/workspace/database/db.json).\n   * **Sesi WhatsApp**: Kredensial autentikasi multi-device dan pairing code tersimpan di direktori `sessions/`."
+      },
+      {
+        "role": "user",
+        "text": "Hai"
+      },
+      {
+        "role": "model",
+        "text": "Hello! How can I help you today? What project or coding task are you working on?"
+      },
+      {
+        "role": "user",
+        "text": "Bisa cek struktur project bot ini"
+      },
+      {
+        "role": "model",
+        "text": "Berikut adalah rincian lengkap struktur proyek **WhatsApp Bot** yang ada di direktori [`/home/runner/workspace`](file:///home/runner/workspace):\n\n---\n\n### 📂 Gambaran Arsitektur Direktori\n\n```text\n/home/runner/workspace\n├── 📄 index.js                   # Entry point utama aplikasi\n├── 📄 settings.js                # Pengaturan utama bot (owner, prefix, pairing, dsb)\n├── 📄 package.json               # Dependensi proyek (Node.js ESM, Baileys v7.0.0-rc14)\n├── 📄 README.md                  # Dokumentasi panduan instalasi & penggunaan\n├── 📁 config/\n│   └── 📄 config.js              # Loader & adapter konfigurasi\n├── 📁 database/                  # Sistem penyimpanan data lokal (JSON database)\n│   ├── 📄 index.js               # Handler database & schema\n│   ├── 📄 db.json                # Database users, groups, settings\n│   └── 📄 antigravity_sessions.json # Session database untuk AI Antigravity\n├── 📁 lib/                       # Core library & engine bot\n│   ├── 📄 connection.js          # Pengelola koneksi socket Baileys & pairing code\n│   ├── 📄 handler.js             # Dynamic plugin loader & message event dispatcher\n│   ├── 📄 serialize.js           # Serialisasi & normalisasi objek pesan WhatsApp (m & sock)\n│   ├── 📄 store.js               # In-memory store untuk chat & contact\n│   ├── 📄 sticker.js             # Generator stiker & konverter WebP / media\n│   ├── 📄 uploader.js            # Uploader file media ke CDN sementara\n│   └── 📄 antigravity.js         # Client API integrasi Google Antigravity AI\n├── 📁 plugins/                   # Modul perintah modular berbasis kategori\n│   ├── 📁 main/                  # Perintah dasar & informasi (ping, menu, speed, owner, profile)\n│   ├── 📁 ai/                    # Integrasi AI chat umum\n│   ├── 📁 antigravity/           # Integrasi model Google Antigravity (chat, vision, token, system)\n│   ├── 📁 group/                 # Perintah manajemen grup (hidetag, kick, promote, link, dll)\n│   ├── 📁 downloader/            # Fitur download media (tiktok, youtube)\n│   ├── 📁 sticker/               # Fitur stiker & konversi gambar (sticker, toimg)\n│   ├── 📁 tools/                 # Alat bantu & utilitas (translate, qr, inspect, quoted)\n│   └── 📁 owner/                 # Perintah admin/owner (eval, exec, limit, broadcast, selfmode)\n├── 📁 utils/                     # Utility helpers\n│   ├── 📄 logger.js              # Logger berbasis Pino & Chalk\n│   ├── 📄 font.js                # Formatter font small caps & kartu visual UI text\n│   ├── 📄 format.js              # Format data (bytes, duration, waktu, JID)\n│   ├── 📄 cleaner.js             # Pembersih sampah session & file temporary\n│   └── 📄 scraper.js             # Web scraper helper\n└── 📁 sessions/                  # File autentikasi multi-device Baileys\n```\n\n---\n\n### 🔍 Detail Komponen Utama\n\n#### 1. Entry Point & Konfigurasi\n* **[`index.js`](file:///home/runner/workspace/index.js)**: Memuat konfigurasi, menginisialisasi database, me-load seluruh plugin secara asinkron, menghubungkan socket WhatsApp, serta menangani *graceful shutdown* dan *uncaught error handling*.\n* **[`settings.js`](file:///home/runner/workspace/settings.js)**: Pusat konfigurasi bot (nomor owner, metode login pairing/QR, prefix, batas limit gratis/premium, auto-read, auto-react status, dan template respon).\n* **[`package.json`](file:///home/runner/workspace/package.json)**: Menggunakan standard **ES Modules (`\"type\": \"module\"`)** dengan dependensi utama `@whiskeysockets/baileys`, `pino`, `chalk`, `jimp`, `fluent-ffmpeg`, dan `axios`.\n\n---\n\n#### 2. Core Engine ([`lib/`](file:///home/runner/workspace/lib))\n* **[`lib/connection.js`](file:///home/runner/workspace/lib/connection.js)**: Mengatur *lifecycle* koneksi Baileys, auto-reconnect, pembuatan pairing code 8-digit ke terminal, pembaruan kredensial, dan auto-clear file session sampah berkala.\n* **[`lib/handler.js`](file:///home/runner/workspace/lib/handler.js)**: Mesin utama *command router*:\n  * **Dynamic Hot-Reloading**: Memuat file plugin secara otomatis saat bot berjalan tanpa perlu restart.\n  * **Syntax Guard**: Memeriksa sintaks JavaScript sebelum di-import agar bot tidak *crash* jika terjadi error kode.\n  * **Permission Checks**: Validasi otomatis untuk `ownerOnly`, `groupOnly`, `privateOnly`, `adminOnly`, `botAdminOnly`, `limit`, dan `cooldown`.\n* **[`lib/serialize.js`](file:///home/runner/workspace/lib/serialize.js)**: Memperkaya objek pesan (`m`) dan socket (`sock`) dengan helper seperti `m.reply()`, `m.react()`, `m.download()`, serta mendeteksi tipe pesan terenkripsi.\n* **[`lib/antigravity.js`](file:///home/runner/workspace/lib/antigravity.js)**: Integrasi khusus ke API Google Antigravity dengan manajemen token, multi-turn conversation memory, dan vision analysis.\n\n---\n\n#### 3. Modul Plugin ([`plugins/`](file:///home/runner/workspace/plugins))\nSetiap file plugin hanya menangani satu perintah atau grup fitur terkait:\n* **`main/`** ([`menu.js`](file:///home/runner/workspace/plugins/main/menu.js), [`ping.js`](file:///home/runner/workspace/plugins/main/ping.js), [`speed.js`](file:///home/runner/workspace/plugins/main/speed.js), [`profile.js`](file:///home/runner/workspace/plugins/main/profile.js), [`owner.js`](file:///home/runner/workspace/plugins/main/owner.js))\n* **`antigravity/`** ([`agychat.js`](file:///home/runner/workspace/plugins/antigravity/agychat.js), [`vision.js`](file:///home/runner/workspace/plugins/antigravity/vision.js), [`model.js`](file:///home/runner/workspace/plugins/antigravity/model.js), [`login.js`](file:///home/runner/workspace/plugins/antigravity/login.js), [`token.js`](file:///home/runner/workspace/plugins/antigravity/token.js), dll)\n* **`group/`** ([`hidetag.js`](file:///home/runner/workspace/plugins/group/hidetag.js), [`tagall.js`](file:///home/runner/workspace/plugins/group/tagall.js), [`kick.js`](file:///home/runner/workspace/plugins/group/kick.js), [`promote.js`](file:///home/runner/workspace/plugins/group/promote.js), [`demote.js`](file:///home/runner/workspace/plugins/group/demote.js), [`link.js`](file:///home/runner/workspace/plugins/group/link.js))\n* **`downloader/`** ([`tiktok.js`](file:///home/runner/workspace/plugins/downloader/tiktok.js), [`youtube.js`](file:///home/runner/workspace/plugins/downloader/youtube.js))\n* **`sticker/`** ([`sticker.js`](file:///home/runner/workspace/plugins/sticker/sticker.js), [`toimg.js`](file:///home/runner/workspace/plugins/sticker/toimg.js))\n* **`tools/`** ([`translate.js`](file:///home/runner/workspace/plugins/tools/translate.js), [`qr.js`](file:///home/runner/workspace/plugins/tools/qr.js), [`inspect.js`](file:///home/runner/workspace/plugins/tools/inspect.js), [`quoted.js`](file:///home/runner/workspace/plugins/tools/quoted.js))\n* **`owner/`** ([`eval.js`](file:///home/runner/workspace/plugins/owner/eval.js), [`exec.js`](file:///home/runner/workspace/plugins/owner/exec.js), [`addprem.js`](file:///home/runner/workspace/plugins/owner/addprem.js), [`setlimit.js`](file:///home/runner/workspace/plugins/owner/setlimit.js), [`clearsession.js`](file:///home/runner/workspace/plugins/owner/clearsession.js), [`autoreactsw.js`](file:///home/runner/workspace/plugins/owner/autoreactsw.js), dll)\n\n---\n\n#### 4. Database & Utilitas ([`database/`](file:///home/runner/workspace/database) & [`utils/`](file:///home/runner/workspace/utils))\n* **[`database/index.js`](file:///home/runner/workspace/database/index.js)**: Menyediakan *in-memory cache* dengan sinkronisasi debounced ke [`database/db.json`](file:///home/runner/workspace/database/db.json).\n* **[`utils/font.js`](file:///home/runner/workspace/utils/font.js)**: Merender tampilan teks estetik dengan *small-caps converter* dan dekorasi glyph modern.\n* **[`utils/cleaner.js`](file:///home/runner/workspace/utils/cleaner.js)**: Menjaga ukuran folder [`sessions/`](file:///home/runner/workspace/sessions) agar tidak membengkak karena file pre-key lama.\n\n---\n\nSemua file terstruktur dengan rapi dan terisolasi per modul. Jika Anda ingin memodifikasi fitur tertentu atau menambahkan plugin baru, silakan beri tahu bagian mana yang ingin dikembangkan!"
+      },
+      {
+        "role": "user",
+        "text": "off"
+      },
+      {
+        "role": "model",
+        "text": "How can I help you today? If you're looking to disable a specific feature or get started on a project, let me know!"
+      }
+    ],
+    "usage": {
+      "promptTokens": 174,
+      "candidatesTokens": 7651,
+      "totalTokens": 7822,
+      "totalRequests": 18,
+      "lastRequestTime": 1787093844202
+    },
+    "createdAt": 1787078349884,
+    "lastActive": 1787093844202,
+    "effort": "high",
+    "pendingOAuth": null,
+    "authType": "oauth",
+    "oauth": {
+      "accessToken": "ya29.a0AdMD6Eh8RougK7xQmeEeoMcgKRLTCtrX4c2y2E-ECxz3pIY0KsG_XMWl1OHhT1GwD3gHmZactqz12ZYvGLvwyzfalbNrJzf8DnT5kEMmLlfBG8rDplHPJorhPfDv_Ii-RpU00ZtBZCsXIZmYSbnCzaCEsQ-NvB9-svMvwqMy6lvQ2A4rSeMQgMbGXkzJf_xyz5ucSZZ3H2yWaCgYKAaoSARASFQHGX2MiGEM44e8MAdYNcW8n0SyUrQ0211",
+      "refreshToken": "1//0gpz1OWI3jGnHCgYIARAAGBASNwF-L9IrIbpfd-Ajl4qswUvUNhB2KWyfFPAxx17HMYLoVDmJEY0_X_WaXWhRvdFDhECmScGvbR4",
+      "expiresAt": 1787096588177,
+      "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxMGY4NzQwNWE5NzljMWRmMzZkZjI2NjA2NzM0ZjMzY2Q4NWMyNzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDcxMDA2MDYwNTkxLXRtaHNzaW4yaDIxbGNyZTIzNXZ0b2xvamg0ZzQwM2VwLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA3MTAwNjA2MDU5MS10bWhzc2luMmgyMWxjcmUyMzV2dG9sb2poNGc0MDNlcC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMTUxMTE0MTY4NDI4NzYxMTkxNSIsImVtYWlsIjoiZGFucXVlcmUud29ya0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6ImptWFdGR0gzU2x2X0JDRS1FWjk0UHciLCJuYW1lIjoiV29yayBEYW5RdWVyZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMaTdwbnptdWt3aWhBbEJXazNfY3dqeUZ2X2RJNkJuT1VKTnJSNVRrZ3RxYzlkME4wPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IldvcmsiLCJmYW1pbHlfbmFtZSI6IkRhblF1ZXJlIiwiaWF0IjoxNzg3MDkyOTg5LCJleHAiOjE3ODcwOTY1ODl9.jUZo76WAv15plGqdXrpHOOYr9GVg9TiKdj_hKQKkVXjXAG3TfPL08VLB7sJWJukWHtYZSI93k1TsEyx-vDIP2HHVKvd-TLzwin1pQFFJPgjNpiZ2a6OHiOaHlXbJTBxji8j01ESsXskIctdlQ5UjbpajxTiKTTDQMHgpIEppCdeJFqAWw0mDS0F3brE_t7WiGSVmRfIaEyTo6pjqRt68lWKWhlEzbjpgKaN7NrAQrOqm02h4y9UTRzEyW_TDtxWRNyH5qVCgLdikcPFcATAjTfsHauf67aNq0iryxAdP_sWh10EUri1hO856jcACNPgs8PLkPmVh7CDP-aOVcwvULg",
+      "tokenType": "Bearer"
+    }
+  },
+  "6282389924037@s.whatsapp.net": {
+    "userJid": "6282389924037@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787308508734,
+    "lastActive": 1787308508734
+  },
+  "6285923350578@s.whatsapp.net": {
+    "userJid": "6285923350578@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787310394528,
+    "lastActive": 1787310394528
+  },
+  "200648104612090@s.whatsapp.net": {
+    "userJid": "200648104612090@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787333211065,
+    "lastActive": 1787333211065
+  },
+  "6282134167130@s.whatsapp.net": {
+    "userJid": "6282134167130@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787333423369,
+    "lastActive": 1787333423369
+  },
+  "182876133978215@s.whatsapp.net": {
+    "userJid": "182876133978215@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787334659393,
+    "lastActive": 1787334659393
+  },
+  "6285217959284@s.whatsapp.net": {
+    "userJid": "6285217959284@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787337531797,
+    "lastActive": 1787337531797
+  },
+  "6285736449041@s.whatsapp.net": {
+    "userJid": "6285736449041@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787337737132,
+    "lastActive": 1787337737132
+  },
+  "120363427321491231@s.whatsapp.net": {
+    "userJid": "120363427321491231@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787340296477,
+    "lastActive": 1787340296477
+  },
+  "120363411822091749@s.whatsapp.net": {
+    "userJid": "120363411822091749@s.whatsapp.net",
+    "isLoggedIn": false,
+    "token": "",
+    "authType": "none",
+    "oauth": null,
+    "pendingOAuth": null,
+    "model": "gemini-3.7-flash-high",
+    "effort": "medium",
+    "systemInstruction": "",
+    "history": [],
+    "usage": {
+      "promptTokens": 0,
+      "candidatesTokens": 0,
+      "totalTokens": 0,
+      "totalRequests": 0,
+      "lastRequestTime": null
+    },
+    "createdAt": 1787342567573,
+    "lastActive": 1787342567573
+  }
+}
